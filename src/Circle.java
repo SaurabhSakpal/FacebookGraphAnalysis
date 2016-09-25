@@ -1,12 +1,19 @@
+import java.util.HashSet;
 
 public class Circle {
-	private Integer circleId;
+	private String circleId;
+	
+	public HashSet<Vertex> memberVertices = new HashSet<Vertex>();
 
-	public Integer getCircleId() {
+	public String getCircleId() {
 		return circleId;
 	}
 
-	public void setCircleId(Integer circleId) {
+	public void setCircleId(String circleId) {
+		this.circleId = circleId;
+	}
+	
+	public Circle(String circleId) {
 		this.circleId = circleId;
 	}
 

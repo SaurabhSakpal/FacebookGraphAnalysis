@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashSet;
 
 public class EdgeListReader implements GraphFileReader {
@@ -16,7 +15,12 @@ public class EdgeListReader implements GraphFileReader {
 	public void readFile() throws IOException {
 		FileReader fileReader =  new FileReader(this.fileLocation);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
-		Graph graph = new Graph();
+		Graph graph;
+		if(Graph.singletonInstance == null) {
+			Graph.singletonInstance = new Graph();
+		}
+		graph = Graph.singletonInstance;
+		
 		String line;
 		int count = 0;
 		while((line = bufferedReader.readLine()) != null) {
@@ -54,20 +58,7 @@ public class EdgeListReader implements GraphFileReader {
 			}
 			count++;
 		}
-		System.out.println("Total Number of Vertices: "+ graph.nodeMap.size());
-		System.out.println("Total Number of Edges: "+ count +" "+ count/2);
-//		int arr[] = new int[graph.nodeMap.size()];
-//		int i =0;
-//		for(Integer key : graph.nodeMap.keySet()) {
-//			arr[i] = key;
-//			i++;
-//		}
-//		Arrays.sort(arr);
-//		i = 1;
-//		for(int num :arr) {
-//			System.out.println(i+" : "+num);
-//			i++;
-//		}
+		graph.totalEdgeCount = count/2 ;
 		bufferedReader.close();
 	}
 
