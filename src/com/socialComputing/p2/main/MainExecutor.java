@@ -1,4 +1,4 @@
-package com.socialCoputing.p2.main;
+package com.socialComputing.p2.main;
 import java.io.IOException;
 
 import com.socialComputing.p2.config.Config;
