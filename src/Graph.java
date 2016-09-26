@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -7,16 +8,26 @@ public class Graph {
 	int totalEdgeCount;
 	int totalAlterCount;
 	
+	ArrayList<Feature> featureNames = new ArrayList<Feature>();
+	
 	public void updateAlterAndEdgeCount() {
 		this.totalAlterCount = this.nodeMap.size();
 		this.totalEdgeCount = this.totalEdgeCount + this.totalAlterCount;
-		System.out.println("Edge Count : " + this.totalEdgeCount);
-		System.out.println("Node Count : "+ this.totalAlterCount);
+		System.out.println("Edge Count (including edges from ego nodes to alter nodes): " + this.totalEdgeCount);
+		System.out.println("Node Count (including ego node) : "+ (this.totalAlterCount + 1));
 	}
 	
-	public static Graph singletonInstance;
+	private static Graph singletonInstance;
 	
 	public static Graph getInstance() {
+		if(singletonInstance == null)
+		{
+			singletonInstance = new Graph();
+		}
 		return singletonInstance;
+	}
+
+	public static void flush() {
+		singletonInstance = null;
 	}
 }

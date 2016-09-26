@@ -14,11 +14,7 @@ public class CircleFileReader implements GraphFileReader {
 	public void readFile() throws IOException {
 		FileReader fileReader =  new FileReader(this.fileLocation);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
-		Graph graph;
-		if(Graph.singletonInstance == null) {
-			Graph.singletonInstance = new Graph();
-		}
-		graph = Graph.singletonInstance;
+		Graph graph = Graph.getInstance();
 		String line;
 		while((line = bufferedReader.readLine()) != null) {
 			String circleInfo[] = line.trim().split("	");
