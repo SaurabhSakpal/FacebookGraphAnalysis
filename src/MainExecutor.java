@@ -39,6 +39,8 @@ public class MainExecutor {
 			Graph.getInstance().updateAlterAndEdgeCount();
 			betweennessCentrality();
 			
+			new Hypothesis().proveFirstHypothesis();
+			
 			Graph.flush();
 		}
 		

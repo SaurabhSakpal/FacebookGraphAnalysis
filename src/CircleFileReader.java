@@ -24,12 +24,12 @@ public class CircleFileReader implements GraphFileReader {
 				Vertex vertex;
 				if(graph.nodeMap.containsKey(vertexId)) {
 					vertex = graph.nodeMap.get(vertexId);
-					vertex.getCircleList().add(circleObj);
+					vertex.getCircleSet().add(circleObj);
 					circleObj.memberVertices.add(vertex);
 				}
 				else {
 					vertex = new Vertex(vertexId);
-					vertex.getCircleList().add(circleObj);
+					vertex.getCircleSet().add(circleObj);
 					graph.nodeMap.put(vertexId, vertex);
 					circleObj.memberVertices.add(vertex);
 				}

@@ -29,6 +29,7 @@ public class AlterFeatureFileReader implements GraphFileReader {
 			for(int i = 1; i < featureInfo.length; i++) {
 				if(featureInfo[i].equals("1")) {
 					vertex.getFeatureArray()[i-1] = true;
+					graph.featureNames.get(i-1).vertexFeatureSet.add(vertex);
 				}
 				else if(featureInfo[i].equals("0")) {
 					vertex.getFeatureArray()[i-1] = false;

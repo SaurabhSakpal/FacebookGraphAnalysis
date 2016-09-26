@@ -1,8 +1,9 @@
+import java.util.HashSet;
 import java.util.LinkedList;
 
 public class Vertex {
 	private Integer vertexId;
-	private LinkedList<Circle> circleList;
+	private HashSet<Circle> circleSet;
 	
 	private boolean featureArray[];
 	
@@ -22,16 +23,16 @@ public class Vertex {
 		this.vertexId = vertexId;
 	}
 	
-	public LinkedList<Circle> getCircleList() {
-		return circleList;
+	public HashSet<Circle>  getCircleSet() {
+		return circleSet;
 	}
 	
-	public void setCircleList(LinkedList<Circle> circleList) {
-		this.circleList = circleList;
+	public void setCircleSet(HashSet<Circle>  circleSet) {
+		this.circleSet = circleSet;
 	}
 	
 	public Vertex(Integer vertexId) {
 		this.vertexId = vertexId;
-		this.circleList = new LinkedList<Circle>();
+		this.circleSet = new HashSet<Circle>();
 	}
 }
