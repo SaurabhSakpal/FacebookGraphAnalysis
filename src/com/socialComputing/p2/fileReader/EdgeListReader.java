@@ -1,7 +1,11 @@
+package com.socialComputing.p2.fileReader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
+
+import com.socialComputing.p2.core.Graph;
+import com.socialComputing.p2.core.Vertex;
 
 public class EdgeListReader implements GraphFileReader {
 	

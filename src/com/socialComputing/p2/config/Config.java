@@ -1,3 +1,4 @@
+package com.socialComputing.p2.config;
 import java.util.HashMap;
 
 public class Config {

@@ -1,6 +1,11 @@
+package com.socialComputing.p2.fileReader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
+import com.socialComputing.p2.core.Circle;
+import com.socialComputing.p2.core.Graph;
+import com.socialComputing.p2.core.Vertex;
 
 public class CircleFileReader implements GraphFileReader {
 	

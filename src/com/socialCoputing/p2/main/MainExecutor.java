@@ -1,22 +1,17 @@
+package com.socialCoputing.p2.main;
 import java.io.IOException;
+
+import com.socialComputing.p2.config.Config;
+import com.socialComputing.p2.core.Graph;
+import com.socialComputing.p2.core.Hypothesis;
+import com.socialComputing.p2.fileReader.AlterFeatureFileReader;
+import com.socialComputing.p2.fileReader.CircleFileReader;
+import com.socialComputing.p2.fileReader.EdgeListReader;
+import com.socialComputing.p2.fileReader.FeatureNamesFileReader;
 
 public class MainExecutor {
 	
 	
-	public static void betweennessCentrality() {
-		Graph graph = Graph.getInstance();
-		int betweennessCentrality = 0;
-		for(int vertexId : graph.nodeMap.keySet()) {
-			if(graph.listRepresentation.containsKey(graph.nodeMap.get(vertexId))) {
-				betweennessCentrality += (graph.totalAlterCount - graph.listRepresentation.get(graph.nodeMap.get(vertexId)).size());
-			}
-			else {
-				betweennessCentrality += graph.totalAlterCount;
-			}
-		}
-		System.out.println("Betweeness Centrality : " + betweennessCentrality);
-	}
-
 	public static void main(String[] args) throws IOException {
 		
 		Config.initialize();
@@ -37,10 +32,16 @@ public class MainExecutor {
 			alterFeatureReader.readFile();
 			
 			Graph.getInstance().updateAlterAndEdgeCount();
-			betweennessCentrality();
+			Graph.getInstance().betweennessCentrality();
 			
+			System.out.println("HYPOTHESIS 1 : ");
 			new Hypothesis().proveFirstHypothesis();
 			
+			
+			System.out.println("HYPOTHESIS 3 : ");
+			new Hypothesis().proveThirdHypothesis(); 
+			
+			System.out.println("\n");
 			Graph.flush();
 		}
 		

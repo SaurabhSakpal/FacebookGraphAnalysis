@@ -1,3 +1,4 @@
+package com.socialComputing.p2.core;
 import java.util.HashSet;
 
 public class Circle {

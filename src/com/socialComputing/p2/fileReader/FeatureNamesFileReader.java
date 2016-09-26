@@ -1,6 +1,10 @@
+package com.socialComputing.p2.fileReader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
+import com.socialComputing.p2.core.Feature;
+import com.socialComputing.p2.core.Graph;
 
 public class FeatureNamesFileReader implements GraphFileReader {
 	String fileLocation;

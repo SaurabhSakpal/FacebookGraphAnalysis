@@ -1,9 +1,10 @@
+package com.socialComputing.p2.core;
 import java.util.HashSet;
 
 public class Feature {
-	Integer featureId;
-	String featureName;
-	Integer dependentFeatureId;
+	public Integer featureId;
+	public String featureName;
+	public Integer dependentFeatureId;
 	
 	public HashSet<Vertex> vertexFeatureSet = new HashSet <Vertex>(); 
 	
